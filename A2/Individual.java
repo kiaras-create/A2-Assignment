@@ -16,6 +16,7 @@ public class Individual {
     int size;
 
 
+    // TESTED, IT WORKS! 
     /**
      * Inital constructor to generate initial population members
      * @param c_0 The initial chromosome size
@@ -33,6 +34,7 @@ public class Individual {
         this.size = chromosome.size();
     }
 
+
     /**
      * Second constructor to create parents and offspring chromosomes
      * @param parent1 The first parent chromosome
@@ -42,6 +44,7 @@ public class Individual {
      */
     public Individual(Individual parent1, Individual parent2, int c_max, float m, int num_letters, Random rng) {
     }
+
 
     /**
      * Provided method to choose a letter at random, in the range from A to the number of states indicated
@@ -53,16 +56,18 @@ public class Individual {
         return Character.valueOf((char)(65 + rng.nextInt(num_letters)));
     }
 
-    // /**
-    //  * Provided method to determine whether a given gene will mutate based on the parameter ***m***
-    //  * @param m the mutation rate
-    //  * @param rng The random number generator being used for the current run
-    //  * @return true if a number randomly chosen between 0 and 1 is less than ***m***, else false
-    //  */
-    // private Boolean doesMutate(float m, Random rng) {
-    //     float randomNum = rng.nextInt(100) / 100f;
-    //     return randomNum < m;
-    // }
+
+    /**
+     * Provided method to determine whether a given gene will mutate based on the parameter ***m***
+     * @param m the mutation rate
+     * @param rng The random number generator being used for the current run
+     * @return true if a number randomly chosen between 0 and 1 is less than ***m***, else false
+     */
+    private Boolean doesMutate(float m, Random rng) {
+        float randomNum = rng.nextInt(100) / 100f;
+        return randomNum < m;
+    }
+    
 
     /**
      * Expresses the individual's chromosome as a String, for display purposes
@@ -85,7 +90,11 @@ public class Individual {
 
         // You can pass rng, as defined above, to your constructors.
         Individual i = new Individual(8, 4, rng);
-        i.toString();
+
+        // TO TEST
+        // Individual ii = new Individual(8, 5, rng);
+        // System.out.println("This is individual i's chromosome: " + i.toString());
+        // System.out.println("This is individual ii's chromosome: " + ii.toString());
 
     }
 

@@ -32,6 +32,8 @@ To rank them, you will use a set of rules to assign each individual a "fitness" 
 We will then apply the same rules to the next generation, only allowing those with the highest fitness to reproduce to create new offspring (Part 4). 
 You will repeat this process over many generations and observe how your population changes (Part 5). 
 
+
+// CHIASHI
 ## Part 1: Designing the `Individual` Constructor for the Initial Population
 
 The core building block of our experiment is each individual creature.
@@ -185,10 +187,11 @@ The next method, `evolve`, selects each generation's winners (the first ***k*** 
 - From these ***k*** individuals, randomly select two. These will be the parents of a member of the next generation.
 - Use the second constructor of `Individual` to combine information from the two parents to create a new offspring. Remember to pass `rng` to the constructor.
 
+
+// EVERYONE 
 ## Part 5: Run Your Experiment
 
 For each generation, you want your program to output the following information in the following format:
-
 For this final part of the experiment, you will need three additional methods in `GA_Simulation`:
 * `describeGeneration` will print some statistics about the current generation.  Specifically, show the fitness of the fittest individual in the generation, the ***k***th individual, and the least fit (last ranking) individual, along with the actual chromosome of the best individual. 
 Please call `printGenInfo` so that they print in a consistent format.

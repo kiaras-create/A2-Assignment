@@ -73,4 +73,35 @@ public class Individual {
 
     }
 
+    public int getFitness(){
+        int fitness = 0;
+        int n = chromosome.size();
+
+        for (int i = 0; i < n/2; i++){
+            char left = chromosome.get(i);
+            char right = chromosome.get(n - 1 - i);
+            if (left == right){
+                fitness += 1;
+            }
+            else{
+                fitness -= 1;
+            }
+            }
+        if (n % 2 == 1){
+            fitness += 1;
+        }
+
+        for (int i = 0; i < n-1; i++){
+            char current = chromosome.get(i);
+            char next = chromosome.get(i + 1);
+            
+            if (current == next){
+                fitness -= 1;
+            }
+
+        }
+        return fitness;
+    
+    }
+
 }

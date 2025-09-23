@@ -24,10 +24,8 @@ public class GA_Simulation {
  * @param best
  * @return Nothing, describes and prints statistics about current generation
  */
-  private void describeGeneration(int roundNumber, int bestFitness, int kthIndividual, int leastFitness, Individual best) {
-    
-
-
+  private void describeGeneration(int roundNumber, int bestFitness, int kthFitness, int leastFitness, Individual best) {
+    printGenInfo(roundNumber, bestFitness, kthFitness, leastFitness, best);
   }
 
 
@@ -43,7 +41,7 @@ public class GA_Simulation {
   private void printGenInfo(int roundNumber, int bestFitness, int kthFitness, int leastFitness, Individual best) {
     System.out.println("Round " + roundNumber + ":");
     System.out.println("Best fitness: " + bestFitness);
-    System.out.println("k-th (" + k + ") fitness: " + kthFitness);
+    System.out.println("k-th (" + 'k' + ") fitness: " + kthFitness);
     System.out.println("Least fit: " + leastFitness);
     System.out.println("Best chromosome: " + best);
     System.out.println(); // blank line to match the example format
